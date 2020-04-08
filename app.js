@@ -17,8 +17,6 @@ var copy = []
 copy = multiplier;
 console.log(copy)
 
-
-
 City.prototype.getRandom = function() {
   var min = Math.ceil(this.minCust);
   var max = Math.floor(this.maxCust);
@@ -75,34 +73,6 @@ function clock()  {
 
 };
 
-function totalsCities()  {
-  var tableElToTarget = document.getElementById('sales-table');
-  var newTrEl = document.createElement('tr');
-  var newThEl = document.createElement('th');
-  newTrEl.appendChild(newThEl);
-  for (var i = 0; i < 14; i++) {
-      var newThEl = document.createElement('th'); 
-      newThEl.textContent = result[i];
-      newTrEl.appendChild(newThEl);
-  }
-
-
-  var array12 = result;
-  var sum = array12.reduce(function(a, b){
-  return a + b;
-  }, 0);
-  console. log(sum); 
-
-  
-  var newThEl = document.createElement('th');
-  newThEl.textContent = sum;
-  newTrEl.appendChild(newThEl);
-
-
-
-  tableElToTarget.appendChild(newTrEl);
-
-};
 clock();
 
 
@@ -142,30 +112,3 @@ var paris = new City('Paris', 20, 38, 2.3, 'https://www.fodors.com/wp-content/up
 paris.getRandom();
 paris.totalSales();
 paris.renderTableRow();
-
-
-
-
-console.log(seattle.hourlySales)
-console.log(tokyo.hourlySales)
-console.log(lima.hourlySales)
-console.log(dubai.hourlySales)
-console.log(paris.hourlySales)
-
-
-const blockList = [seattle.hourlySales, tokyo.hourlySales, lima.hourlySales, dubai.hourlySales, paris.hourlySales];
-const result = [];
-
-blockList.forEach((v, index) =>
-  v.forEach((val, i) => {
-    result[i] = result[i] ? result[i] : 0;
-    result[i] += val;
-  })
-);
-
-console.log(result);
-
-
-totalsCities();
-
-
