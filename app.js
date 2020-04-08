@@ -79,6 +79,7 @@ function totalsCities()  {
   var tableElToTarget = document.getElementById('sales-table');
   var newTrEl = document.createElement('tr');
   var newThEl = document.createElement('th');
+  newThEl.textContent = 'Totals'
   newTrEl.appendChild(newThEl);
   for (var i = 0; i < 14; i++) {
       var newThEl = document.createElement('th'); 
