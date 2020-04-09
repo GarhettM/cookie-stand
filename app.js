@@ -1,6 +1,6 @@
 'use strict'
 
-function City(location, minCust, maxCust, avgCookieSale, allTotalSales, picture)  {
+function City(location, minCust, maxCust, avgCookieSale,  picture)  {
   this.location = location;
   this.minCust =  minCust;
   this.maxCust = maxCust;
@@ -26,20 +26,19 @@ City.prototype.getRandom = function() {
 }
 
 City.prototype.totalSales = function() {
-    for (var i = 6; i <= 19; i++){
-      var hourlyCust = this.getRandom();
-      var hourlyCookieSales = (hourlyCust * this.avgCookieSale);
-      this.hourlySales.push(Math.round(hourlyCookieSales))
-    }
-    for (i = 0; i < this.hourlySales.length; i++)  {
-      this.allTotalSales = this.allTotalSales + this.hourlySales[i]
-    }
+  for (var i = 6; i <= 19; i++){
+    var hourlyCust = this.getRandom();
+    var hourlyCookieSales = (hourlyCust * this.avgCookieSale);
+    this.hourlySales.push(Math.round(hourlyCookieSales))
   }
+  for (i = 0; i < this.hourlySales.length; i++)  {
+    this.allTotalSales = this.allTotalSales + this.hourlySales[i]
+  }
+}
   
 City.prototype.renderTableRow = function() {
 
   var tableElToTarget = document.getElementById('sales-table');
-
   var newTrEl = document.createElement('tr');
   var newThEl = document.createElement('th'); 
   var newTdEl = document.createElement('td');
@@ -47,15 +46,14 @@ City.prototype.renderTableRow = function() {
   newTrEl.appendChild(newThEl);
 
   for (var i = 0; i < 14; i++) {
-      newTdEl = document.createElement('td'); 
-      newTdEl.textContent = this.hourlySales[i];
-      newTrEl.appendChild(newTdEl);
+    newTdEl = document.createElement('td'); 
+    newTdEl.textContent = this.hourlySales[i];
+    newTrEl.appendChild(newTdEl);
   }
 
   var newTotalTd = document.createElement('td')
   newTotalTd.textContent = this.allTotalSales;
   newTrEl.appendChild(newTotalTd);
-
   tableElToTarget.appendChild(newTrEl);
 
 
@@ -67,9 +65,9 @@ function clock()  {
   var newThEl = document.createElement('th');
   newTrEl.appendChild(newThEl);
   for (var i = 0; i < 15; i++) {
-      var newThEl = document.createElement('th'); 
-      newThEl.textContent = time[i];
-      newTrEl.appendChild(newThEl);
+    var newThEl = document.createElement('th'); 
+    newThEl.textContent = time[i];
+    newTrEl.appendChild(newThEl);
   }
   
   tableElToTarget.appendChild(newTrEl);
@@ -109,6 +107,7 @@ clock();
 
 
 var seattle = new City('Seattle', 23, 65, 6.3, 'https://olsonkundig.com/wp-content/uploads/2017/11/13049_00_N504_web-2160x1549.jpg');
+
 seattle.getRandom();
 seattle.totalSales();
 seattle.renderTableRow();
