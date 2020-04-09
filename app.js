@@ -41,9 +41,10 @@ City.prototype.renderTableRow = function() {
   var tableElToTarget = document.getElementById('sales-table');
 
   var newTrEl = document.createElement('tr');
-  var newTdEl = document.createElement('td'); 
-  newTdEl.textContent = this.location;
-  newTrEl.appendChild(newTdEl);
+  var newThEl = document.createElement('th'); 
+  var newTdEl = document.createElement('td');
+  newThEl.textContent = this.location;
+  newTrEl.appendChild(newThEl);
 
   for (var i = 0; i < 14; i++) {
       newTdEl = document.createElement('td'); 
@@ -79,7 +80,7 @@ function totalsCities()  {
   var tableElToTarget = document.getElementById('sales-table');
   var newTrEl = document.createElement('tr');
   var newThEl = document.createElement('th');
-  newThEl.textContent = 'Totals';
+  newThEl.textContent = 'Totals:';
   newTrEl.appendChild(newThEl);
   for (var i = 0; i < 14; i++) {
       var newThEl = document.createElement('th'); 
