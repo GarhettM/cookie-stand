@@ -11,24 +11,36 @@ header {
 }
 
  header nav  {
-  width: 960px;
+  width: 850px;
   margin-left: auto;
   margin-right: auto;
-  
 }
 
 header nav img {
-  align-content: center;
+  
   margin-top: 15px;
   margin-right: 30px;
   padding-left: 30px;
 }
 
-main nav ul li {
+#advert {
+  float: right;
+  display: inline-flex;
+}
+
+main > nav > ul > li {
   display: inline;
-  margin-left: 40px;
-  margin-right: 102px;
-  
+  margin-left: 50px;
+  margin-right: 70px;
+}
+
+main nav ul {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+main: ul:nth-child(2) {
+  height: 600px;
 }
 
 main  {
@@ -36,7 +48,7 @@ main  {
   margin-top: 15px;
   margin-left: auto;
   margin-right: auto;
-  width: 960px;
+  width: 850px;
   overflow: hidden;
 }
 
@@ -44,6 +56,10 @@ main  {
   font-family: sans-serif;
   font-size: 150%;
   text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border: solid coral;
+  border-radius: 3em;
 }
 
 /*carrot stands for direct child */
@@ -103,11 +119,20 @@ footer  {
   height: 100px;
   background-color: grey;
   margin-top: 30px;
+
+}
+
+footer nav  {
+  width: 850px;  
   margin-left: auto;
   margin-right: auto;
 }
 
 footer nav img {
-  width: 200px
-  ;
+  width: 200px;
+  float: left;
+}
+
+#footerPun  {
+  
 }
