@@ -1,5 +1,5 @@
 * {
-  outline: 1px dotted red;
+  /* outline: 1px dotted red; */
   box-sizing: border-box;
 }
  /* tells man bear pig's border and padding to fit inside the width (subtract from the width) */
@@ -29,7 +29,7 @@ header nav img {
 }
 
 main > nav > ul > li {
-  display: inline;
+  text-align: center;
   margin-left: 50px;
   margin-right: 70px;
 }
