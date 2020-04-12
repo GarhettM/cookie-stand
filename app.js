@@ -86,11 +86,9 @@ function totalsCities()  {
  
     for (var i = 0; i < cities.length; i++) {
       amHours = amHours + cities[i].hourlySales[j] //6am is  referenced by the "location" 0 inside the brackets 
-    console.log(cities.length)
+
     }
   
-  
-  console.log('total ' + amHours)
   cityHourly.push(amHours) //this pushes amhours into the cityhourly array and then below is the for loop that populates it in the table
 
   }
@@ -170,7 +168,7 @@ storeForm.addEventListener('submit', function(e)  {
   var city = e.target.city.value;
   var min = parseInt(e.target.min.value);
   var max = parseInt(e.target.max.value);
-  var averages = parseInt(e.target.averages.value); 
+  var averages = (e.target.averages.value); 
 
   var cityForm = new City(city, min, max, averages);
 
