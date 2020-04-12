@@ -1,7 +1,7 @@
 'use strict'
 
 var cities = [];
-var cityHourly = [];  
+ 
 
 
 function City(location, minCust, maxCust, avgCookieSale,)  {
@@ -80,25 +80,24 @@ function totalsCities()  {
   newThEl.textContent = 'Totals:';
   newTrEl.appendChild(newThEl);
   
-  
+  var cityHourly = []; 
   for (var j = 0; j < 14; j++)  {
     var amHours = 0;
  
     for (var i = 0; i < cities.length; i++) {
       amHours = amHours + cities[i].hourlySales[j] //6am is  referenced by the "location" 0 inside the brackets 
-    console.log(cities.length)
-    }
 
+    }
   
-  console.log('total ' + amHours)
   cityHourly.push(amHours) //this pushes amhours into the cityhourly array and then below is the for loop that populates it in the table
 
   }
-
+  
   for (i = 0; i < 14; i++)  {
     var newTdEl = document.createElement('td');
     newTdEl.textContent = (cityHourly[i]);
     newTrEl.appendChild(newTdEl);
+    console.log(cityHourly)
   }
 
   var totalEverything = 0;
@@ -169,7 +168,7 @@ storeForm.addEventListener('submit', function(e)  {
   var city = e.target.city.value;
   var min = parseInt(e.target.min.value);
   var max = parseInt(e.target.max.value);
-  var averages = parseInt(e.target.averages.value); 
+  var averages = (e.target.averages.value); 
 
   var cityForm = new City(city, min, max, averages);
 
