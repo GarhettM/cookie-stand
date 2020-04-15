@@ -2,8 +2,6 @@
 
 var cities = [];
  
-
-
 function City(location, minCust, maxCust, avgCookieSale,)  {
   // debugger
   this.location = location;
@@ -54,7 +52,6 @@ City.prototype.renderTableRow = function() {
   newTrEl.appendChild(newTotalTd);
   tableElToTarget.appendChild(newTrEl);
 
-
 };
 
 function clock()  {
@@ -84,12 +81,13 @@ function totalsCities()  {
   for (var j = 0; j < 14; j++)  {
     var amHours = 0;
  
+//6am is  referenced by the "location" 0 inside the brackets 
     for (var i = 0; i < cities.length; i++) {
-      amHours = amHours + cities[i].hourlySales[j] //6am is  referenced by the "location" 0 inside the brackets 
-
+      amHours = amHours + cities[i].hourlySales[j] 
     }
-  
-  cityHourly.push(amHours) //this pushes amhours into the cityhourly array and then below is the for loop that populates it in the table
+
+  //this pushes amhours into the cityhourly array and then below is the for loop that populates it in the table
+  cityHourly.push(amHours) 
 
   }
   
@@ -108,8 +106,9 @@ function totalsCities()  {
   newTdEl.textContent = totalEverything;
   newTrEl.appendChild(newTdEl);
   tableElToTarget.append(newTrEl)
-  console.log(typeof(cityHourly))
 };
+
+
 clock();
 
 
@@ -160,8 +159,8 @@ function removeFinalRow() {
   var toDelete = document.getElementById('x');
   toDelete.remove();
 }
-var storeForm = document.getElementById('chatform');
 
+var storeForm = document.getElementById('chatform');
 
 storeForm.addEventListener('submit', function(e)  {
   e.preventDefault();
@@ -172,18 +171,13 @@ storeForm.addEventListener('submit', function(e)  {
 
   var cityForm = new City(city, min, max, averages);
 
-  console.log(cities)
-
- 
-  console.log(cities);
-  
- 
   removeFinalRow();
+  
   cityForm.getRandom();
   cityForm.totalSales();
   cityForm.renderTableRow();
+  
   totalsCities();
-  console.log()
 })
 
 
